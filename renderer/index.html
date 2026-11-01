@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; media-src 'self' blob: data:;"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>auv</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="svg-defs" width="0" height="0" aria-hidden="true">
+      <filter id="liquid">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.009 0.016"
+          numOctaves="2"
+          seed="11"
+          result="noise"
+        />
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="noise"
+          scale="7"
+          xChannelSelector="R"
+          yChannelSelector="G"
+        />
+      </filter>
+    </svg>
+
+    <div class="window">
+      <div class="ambient" aria-hidden="true"></div>
+
+      <header class="titlebar">
+        <span class="spacer"></span>
+        <div class="controls">
+          <button id="settings-btn" class="ctrl" title="设置" aria-label="设置">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h8M17 7h3M4 17h3M12 17h8" />
+              <circle cx="14.5" cy="7" r="2.2" />
+              <circle cx="9.5" cy="17" r="2.2" />
+            </svg>
+          </button>
+          <button id="min" class="ctrl" title="最小化" aria-label="最小化">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 12h12" />
+            </svg>
+          </button>
+          <button id="close" class="ctrl close" title="关闭" aria-label="关闭">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="stage" id="stage">
+        <div class="chat-view" id="chat-view">
+        <div
+          class="orb-wrap"
+          id="orb"
+          data-state="idle"
+          data-variant="3"
+          aria-hidden="true"
+        >
+          <div class="orb-motion">
+            <div class="orb-halo"></div>
+            <div class="orb">
+              <span class="orb-body"></span>
+              <span class="orb-inner"></span>
+              <span class="orb-sheen"></span>
+              <span class="orb-spec"></span>
+              <span class="orb-glass"></span>
+              <span class="orb-rim"></span>
+              <span class="orb-ripple r1"></span>
+              <span class="orb-ripple r2"></span>
+              <span class="orb-burst"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="intro" id="intro">
+          <h1>AUV</h1>
+          <p>北京话学习助手</p>
+        </div>
+
+        <p class="msg" id="msg" hidden></p>
+
+        <section class="card" id="card" hidden>
+          <div class="card-head">
+            <span class="card-label">北京话</span>
+            <div class="play-actions">
+              <button class="play" id="play-btn" type="button" title="朗读">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5l11 7-11 7V5z" />
+                </svg>
+                朗读
+              </button>
+              <button class="play" id="play-slow" type="button" title="慢速朗读">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 17a8 8 0 1 1 16 0" />
+                  <path d="M12 13l3-3" />
+                </svg>
+                慢速
+              </button>
+            </div>
+          </div>
+          <div class="beijing" id="r-beijing"></div>
+          <div class="pinyin" id="r-pinyin"></div>
+          <p class="explain" id="r-explain"></p>
+          <div class="changes" id="r-changes"></div>
+          <div class="examples" id="r-examples"></div>
+        </section>
+        </div>
+
+        <div class="course-view" id="course-view" hidden>
+          <div class="course-list" id="course-list"></div>
+
+          <div class="lesson-view" id="lesson-view" hidden>
+            <button class="lesson-back" id="lesson-back" type="button">
+              ← 课程
+            </button>
+            <div class="lesson-progress" id="lesson-progress"></div>
+
+            <div class="lesson-card">
+              <div class="lesson-beijing" id="lesson-beijing"></div>
+              <div class="lesson-pinyin" id="lesson-pinyin"></div>
+              <div class="lesson-standard" id="lesson-standard"></div>
+              <p class="lesson-explain" id="lesson-explain"></p>
+              <p class="lesson-example" id="lesson-example"></p>
+            </div>
+
+            <div class="lesson-actions">
+              <button id="lesson-prev" type="button">上一句</button>
+              <button id="lesson-play" type="button" class="primary">
+                ▶ 听
+              </button>
+              <button id="lesson-next" type="button">下一句</button>
+            </div>
+
+            <button id="lesson-done" type="button" class="lesson-done">
+              标记已学
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <div class="composer-row">
+        <form class="composer" id="ask-form">
+          <input
+            id="ask-input"
+            type="text"
+            placeholder="问点什么…比如：西红柿怎么说"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="ask-btn" type="submit" title="提问" aria-label="提问">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+          </button>
+        </form>
+
+        <button
+          id="mic-btn"
+          type="button"
+          class="mic-fab"
+          title="按住说话"
+          aria-label="按住说话"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="9" y="3" width="6" height="11" rx="3" />
+            <path d="M5 11a7 7 0 0 0 14 0M12 18v3" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="tabs">
+        <span class="tab-indicator" id="tab-indicator"></span>
+        <button id="tab-chat" class="tab active" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H7l-4 3 1.2-4.4A8.5 8.5 0 1 1 21 11.5z" />
+          </svg>
+          <span>对话</span>
+        </button>
+        <button id="tab-course" class="tab" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5z" />
+            <path d="M4 19a2 2 0 0 1 2-2h13" />
+          </svg>
+          <span>课程</span>
+        </button>
+      </nav>
+
+      <footer class="statusbar">
+        <span class="dot"></span>
+        <span id="hint">输入一句话，学地道北京话</span>
+      </footer>
+    </div>
+
+    <div class="sheet" id="sheet" hidden>
+      <div class="sheet-panel">
+        <div class="sheet-head">
+          <button
+            id="sheet-back"
+            class="sheet-back"
+            type="button"
+            aria-label="返回"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <h2>设置</h2>
+        </div>
+        <label for="key-input">DeepSeek API Key</label>
+        <input
+          id="key-input"
+          type="password"
+          placeholder="sk-..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <p class="sheet-hint">
+          Key 只保存在本机（加密存储），不会上传。
+        </p>
+        <button
+          class="sheet-link"
+          type="button"
+          data-url="https://platform.deepseek.com/api_keys"
+        >
+          去 DeepSeek 申请 →
+        </button>
+        <p class="sheet-status" id="key-status"></p>
+        <div class="sheet-actions">
+          <button id="test-key" type="button">测试连接</button>
+          <button id="save-key" type="button" class="primary">保存</button>
+          <button id="close-sheet" type="button">取消</button>
+        </div>
+
+        <div class="sheet-divider"></div>
+
+        <h3 class="sheet-subtitle">朗读语音</h3>
+
+        <label for="tts-provider">语音引擎</label>
+        <select id="tts-provider">
+          <option value="qwen">千问「北京-晓东」（真京腔，推荐）</option>
+          <option value="edge">微软标准普通话（免费，无京腔）</option>
+        </select>
+
+        <label for="qwen-apikey">阿里云百炼 API Key</label>
+        <input
+          id="qwen-apikey"
+          type="password"
+          placeholder="在百炼控制台创建 API Key"
+          autocomplete="off"
+          spellcheck="false"
+        />
+
+        <p class="sheet-hint">
+          阿里云百炼 → API Key 管理创建；需实名认证。音色固定为 Dylan（北京-晓东）。免费额度之后约 ¥0.8/万字符。
+        </p>
+        <button
+          class="sheet-link"
+          type="button"
+          data-url="https://bailian.console.aliyun.com/cn-beijing/model/settings/api-key"
+        >
+          去百炼申请 →
+        </button>
+
+        <div class="sheet-actions">
+          <button id="test-tts" type="button">测试京腔</button>
+          <button id="save-tts" type="button" class="primary">
+            保存语音设置
+          </button>
+        </div>
+        <p class="sheet-status" id="tts-status"></p>
+
+        <button id="replay-tour" type="button" class="replay-tour">
+          重新观看使用教程
+        </button>
+      </div>
+    </div>
+
+    <div class="tour" id="tour" hidden>
+      <div class="tour-hole" id="tour-hole"></div>
+      <div class="tour-card" id="tour-card">
+        <div class="tour-step" id="tour-step"></div>
+        <h3 id="tour-title"></h3>
+        <p id="tour-text"></p>
+        <div class="tour-dots" id="tour-dots"></div>
+        <div class="tour-actions">
+          <button id="tour-skip" type="button">跳过</button>
+          <span class="tour-spacer"></span>
+          <button id="tour-prev" type="button">上一步</button>
+          <button id="tour-next" type="button" class="primary">下一步</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="orb.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

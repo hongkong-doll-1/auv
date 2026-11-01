@@ -1,0 +1,347 @@
+{
+  "lessons": [
+    {
+      "id": "erhua",
+      "title": "儿化音入门",
+      "subtitle": "把“儿”卷起来，不单独成音节",
+      "items": [
+        {
+          "beijing": "这儿",
+          "standard": "这里",
+          "pinyin": "zhèr",
+          "explain": "“这”和“儿”融合成一个音节，不读成 zhè-er。",
+          "example": "您来这儿坐。"
+        },
+        {
+          "beijing": "那儿",
+          "standard": "那里",
+          "pinyin": "nàr",
+          "explain": "和“这儿”相对，指较远的地方。",
+          "example": "东西搁那儿了。"
+        },
+        {
+          "beijing": "哪儿",
+          "standard": "哪里",
+          "pinyin": "nǎr",
+          "explain": "问地点时用，儿化后更口语。",
+          "example": "您去哪儿啊？"
+        },
+        {
+          "beijing": "一点儿",
+          "standard": "一点",
+          "pinyin": "yìdiǎnr",
+          "explain": "表示少量，“点”后面带儿化。",
+          "example": "再搁一点儿盐。"
+        },
+        {
+          "beijing": "一会儿",
+          "standard": "一会儿",
+          "pinyin": "yíhuìr",
+          "explain": "表示很短的时间。",
+          "example": "您等一会儿。"
+        },
+        {
+          "beijing": "玩儿",
+          "standard": "玩",
+          "pinyin": "wánr",
+          "explain": "“玩”后面儿化，鼻音收尾变成卷舌。",
+          "example": "周末出去玩儿。"
+        },
+        {
+          "beijing": "事儿",
+          "standard": "事情",
+          "pinyin": "shìr",
+          "explain": "口语里“事”常加儿化。",
+          "example": "这事儿我门儿清。"
+        },
+        {
+          "beijing": "味儿",
+          "standard": "味道",
+          "pinyin": "wèir",
+          "explain": "“味”加儿化，常用来形容气味。",
+          "example": "这豆汁儿味儿真冲。"
+        },
+        {
+          "beijing": "小孩儿",
+          "standard": "小孩",
+          "pinyin": "xiǎoháir",
+          "explain": "小称，带亲切感。",
+          "example": "这小孩儿倍儿精神。"
+        },
+        {
+          "beijing": "冰棍儿",
+          "standard": "冰棍",
+          "pinyin": "bīnggùnr",
+          "explain": "具体食物名词常儿化。",
+          "example": "来根儿冰棍儿。"
+        }
+      ]
+    },
+    {
+      "id": "words",
+      "title": "高频北京词儿",
+      "subtitle": "十个最常听到的北京话词",
+      "items": [
+        {
+          "beijing": "局气",
+          "standard": "讲义气、守规矩",
+          "pinyin": "júqi",
+          "explain": "褒义，形容人办事公道、够意思。",
+          "example": "这人办事儿倍儿局气。"
+        },
+        {
+          "beijing": "瓷器",
+          "standard": "好朋友、铁哥们儿",
+          "pinyin": "cíqì",
+          "explain": "老北京话，也作“铁瓷”。",
+          "example": "我俩是老瓷器。"
+        },
+        {
+          "beijing": "发小儿",
+          "standard": "从小一起长大的朋友",
+          "pinyin": "fàxiǎor",
+          "explain": "“发小”后面带儿化。",
+          "example": "这是我发小儿。"
+        },
+        {
+          "beijing": "得嘞",
+          "standard": "好的、行",
+          "pinyin": "déi lei",
+          "explain": "爽快地答应，比“好的”更有北京味儿。",
+          "example": "得嘞，您放心。"
+        },
+        {
+          "beijing": "遛弯儿",
+          "standard": "散步",
+          "pinyin": "liùwānr",
+          "explain": "饭后随便走走。",
+          "example": "吃完饭出去遛弯儿。"
+        },
+        {
+          "beijing": "搓火",
+          "standard": "生气、着急上火",
+          "pinyin": "cuōhuǒ",
+          "explain": "形容心里窝火。",
+          "example": "这事儿真搓火。"
+        },
+        {
+          "beijing": "倍儿",
+          "standard": "非常、特别",
+          "pinyin": "bèir",
+          "explain": "替代“很”，使用频率很高。",
+          "example": "倍儿精神。"
+        },
+        {
+          "beijing": "忒",
+          "standard": "太、过于",
+          "pinyin": "tuī",
+          "explain": "北京话读 tuī，不读 tè。",
+          "example": "忒贵了。"
+        },
+        {
+          "beijing": "门儿清",
+          "standard": "非常清楚",
+          "pinyin": "ménr qīng",
+          "explain": "对一件事了解得很透。",
+          "example": "这事儿我门儿清。"
+        },
+        {
+          "beijing": "点儿背",
+          "standard": "运气不好",
+          "pinyin": "diǎnr bèi",
+          "explain": "“点儿”带儿化，指运气。",
+          "example": "今儿点儿背。"
+        }
+      ]
+    },
+    {
+      "id": "greetings",
+      "title": "打招呼与寒暄",
+      "subtitle": "像北京人一样开口",
+      "items": [
+        {
+          "beijing": "吃了吗您呐？",
+          "standard": "你吃了吗？",
+          "pinyin": "chī le ma nín na",
+          "explain": "老北京见面寒暄，不一定真问吃饭。",
+          "example": "吃了吗您呐？遛弯儿去啊？"
+        },
+        {
+          "beijing": "您呐",
+          "standard": "您哪",
+          "pinyin": "nín na",
+          "explain": "敬称招呼，常放在句尾。",
+          "example": "您呐，慢走。"
+        },
+        {
+          "beijing": "干嘛去呀？",
+          "standard": "去干什么？",
+          "pinyin": "gànmá qù ya",
+          "explain": "“干嘛”就是“干什么”。",
+          "example": "这么早，干嘛去呀？"
+        },
+        {
+          "beijing": "回见您呐",
+          "standard": "再见",
+          "pinyin": "huíjiàn nín na",
+          "explain": "北京式告别，客气又亲切。",
+          "example": "回见您呐！"
+        },
+        {
+          "beijing": "您慢走",
+          "standard": "您走好",
+          "pinyin": "nín màn zǒu",
+          "explain": "送客时说的话。",
+          "example": "您慢走，有空儿再来。"
+        },
+        {
+          "beijing": "劳驾",
+          "standard": "劳烦、借光",
+          "pinyin": "láojià",
+          "explain": "请人让路或帮忙时的客气话。",
+          "example": "劳驾，让一下。"
+        },
+        {
+          "beijing": "得嘞",
+          "standard": "好的",
+          "pinyin": "déi lei",
+          "explain": "答应得爽快。",
+          "example": "得嘞，我这就去。"
+        },
+        {
+          "beijing": "甭客气",
+          "standard": "不用客气",
+          "pinyin": "béng kèqi",
+          "explain": "“甭”就是“不用”。",
+          "example": "甭客气，都是自己人。"
+        }
+      ]
+    },
+    {
+      "id": "market",
+      "title": "买菜砍价",
+      "subtitle": "菜市场里的北京话",
+      "items": [
+        {
+          "beijing": "这黄瓜怎么卖？",
+          "standard": "这黄瓜多少钱？",
+          "pinyin": "zhè huángguā zěnme mài",
+          "explain": "问价最常用的说法。",
+          "example": "这黄瓜怎么卖？"
+        },
+        {
+          "beijing": "三块五一斤",
+          "standard": "三元五角一斤",
+          "pinyin": "sān kuài wǔ yì jīn",
+          "explain": "“块”就是“元”。",
+          "example": "三块五一斤，倍儿新鲜。"
+        },
+        {
+          "beijing": "忒贵了",
+          "standard": "太贵了",
+          "pinyin": "tuī guì le",
+          "explain": "“忒”读 tuī。",
+          "example": "忒贵了，便宜点儿。"
+        },
+        {
+          "beijing": "便宜点儿吧",
+          "standard": "便宜一些吧",
+          "pinyin": "piányi diǎnr ba",
+          "explain": "砍价时的标准开场。",
+          "example": "便宜点儿吧，我多买点儿。"
+        },
+        {
+          "beijing": "给我来二斤",
+          "standard": "给我称两斤",
+          "pinyin": "gěi wǒ lái èr jīn",
+          "explain": "“来”在这里是要、称的意思。",
+          "example": "给我来二斤。"
+        },
+        {
+          "beijing": "麻利儿点儿",
+          "standard": "快点儿、利索点",
+          "pinyin": "málìr diǎnr",
+          "explain": "催人快一点，语气可轻可重。",
+          "example": "麻利儿点儿，后头还排队呢。"
+        },
+        {
+          "beijing": "甭找了",
+          "standard": "不用找零了",
+          "pinyin": "béng zhǎo le",
+          "explain": "“甭”就是“不用”。",
+          "example": "甭找了，您留着。"
+        },
+        {
+          "beijing": "回见您呐",
+          "standard": "再见",
+          "pinyin": "huíjiàn nín na",
+          "explain": "买完东西告别。",
+          "example": "回见您呐！"
+        }
+      ]
+    },
+    {
+      "id": "hutong",
+      "title": "胡同闲聊",
+      "subtitle": "听懂北京快话里的吞音",
+      "items": [
+        {
+          "beijing": "不儿道",
+          "standard": "不知道",
+          "pinyin": "bùr dào",
+          "explain": "快说时“知”弱化，只适合听辨，正式场合说完整。",
+          "example": "这事儿我不儿道。"
+        },
+        {
+          "beijing": "老儿",
+          "standard": "老师",
+          "pinyin": "lǎor",
+          "explain": "吞音说法，极熟的口语里才用。",
+          "example": "老儿来了。"
+        },
+        {
+          "beijing": "胸是",
+          "standard": "西红柿",
+          "pinyin": "xiōngshi",
+          "explain": "老北京快说时的吞音。",
+          "example": "这胸是倍儿好吃。"
+        },
+        {
+          "beijing": "告儿你",
+          "standard": "告诉你",
+          "pinyin": "gàor nǐ",
+          "explain": "“诉”弱化，听起来像“告儿”。",
+          "example": "告儿你一事儿。"
+        },
+        {
+          "beijing": "甭",
+          "standard": "不用",
+          "pinyin": "béng",
+          "explain": "“不用”的合音。",
+          "example": "甭客气。"
+        },
+        {
+          "beijing": "俩",
+          "standard": "两个",
+          "pinyin": "liǎ",
+          "explain": "“两个”的合音。",
+          "example": "我俩是老瓷器。"
+        },
+        {
+          "beijing": "这个",
+          "standard": "这个",
+          "pinyin": "zhèige",
+          "explain": "口语里常读成 zhèige。",
+          "example": "这个多少钱？"
+        },
+        {
+          "beijing": "大石烂儿",
+          "standard": "大栅栏",
+          "pinyin": "Dàshílànr",
+          "explain": "地名特殊读法，不能按字面念。",
+          "example": "您去大石烂儿啊？"
+        }
+      ]
+    }
+  ]
+}

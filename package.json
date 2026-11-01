@@ -1,0 +1,53 @@
+{
+  "name": "auv",
+  "version": "1.0.0",
+  "description": "auv —— 北京话学习助手",
+  "author": "auv",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^45.2.1",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "com.auv.beijing",
+    "productName": "auv",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "src/**/*",
+      "data/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "auv",
+      "artifactName": "auv-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "auv-Portable-${version}.${ext}"
+    }
+  },
+  "dependencies": {
+    "msedge-tts": "^2.1.1"
+  }
+}
