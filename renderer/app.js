@@ -778,6 +778,8 @@ async function loadLessons() {
 
 /* ---------- 首次使用动态教程 ---------- */
 
+const ONBOARD_VERSION = "1.0.1";
+
 let tourIndex = -1;
 let tourDemoShown = false;
 
@@ -998,7 +1000,7 @@ function endTour() {
   tour.hidden = true;
   tour.classList.remove("tour-dim");
   tourIndex = -1;
-  localStorage.setItem("auv.onboarded", "1");
+  localStorage.setItem("auv.onboardedVersion", ONBOARD_VERSION);
 }
 
 tourNext?.addEventListener("click", () => {
@@ -1023,7 +1025,7 @@ replayTourBtn?.addEventListener("click", () => {
 loadLessons();
 refreshConfig();
 
-if (localStorage.getItem("auv.onboarded") !== "1") {
+if (localStorage.getItem("auv.onboardedVersion") !== ONBOARD_VERSION) {
   setTimeout(startTour, 900);
 }
 
